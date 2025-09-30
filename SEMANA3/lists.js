@@ -148,21 +148,44 @@
 //}, initialValue);
 // Example 1: Sumar numeros
 
-const numbersArray = [10, 20, 30, 40, 50];
-const suma = numbersArray.reduce(function(count, currenValue){
-    return count + currenValue;
-},0);
+// const numbersArray = [10, 20, 30, 40, 50];
+// const suma = numbersArray.reduce(function(count, currenValue){
+//     return count + currenValue;
+// },0);
 
-const sumaArrow = numbersArray.reduce((count, currenValue) => count + currenValue, 0);
+// const sumaArrow = numbersArray.reduce((count, currenValue) => count + currenValue, 0);
 
-const maximo = numbersArray.reduce(function(contenedor, currenValue){
-return {currenValue: contenedor > currenValue ? contenedor: currenValue}
-},numbersArray[0])
+// const maximo = numbersArray.reduce(function(contenedor, currenValue){
+// return {currenValue: contenedor > currenValue ? contenedor: currenValue}
+// },numbersArray[0])
 
-const maximoArrow = numbersArray.reduce((contenedor, currentValue) => (contenedor > currentValue ? contenedor : currentValue) , numbersArray[0])
+// const maximoArrow = numbersArray.reduce((contenedor, currentValue) => (contenedor > currentValue ? contenedor : currentValue) , numbersArray[0])
 
-console.log(maximoArrow)
+// console.log(maximoArrow)
 
 // Map()
 // Filter()
 // Reduce()
+
+//* Escribir un programa en el cual se proporcione una serie de objetos que representen estudiantes, cada uno con un nombre y una serie de puntuaciones de examenes. Se solicita usar map, filter y reduce para calcular el puntaje promedio del examen de cada estudiante y devulver un array de objetos que contengan solo a los estudiantes que tienen un puntaje mayor a 15
+
+const estudiantes = [
+    {nombre: 'Juan', puntuacion : [15,13,19]},
+    {nombre: 'Pepe', puntuacion : [13,19,11]},
+    {nombre: 'Marcia', puntuacion : [15,16,12]},
+    {nombre: 'Ivon', puntuacion : [14,13,19]},
+]
+
+   
+    
+const promedios = estudiantes.map( estu => {
+const suma = estu.puntuacion.reduce((contenedor, currentValue) => contenedor + currentValue,0)
+promedio = suma / estu.puntuacion.length;
+return { 
+    alumno: estu.nombre,
+    nota : promedio.toFixed(2)
+}
+})
+
+const mayor = promedios.filter(pro => pro.nota > 15)
+console.log(mayor)
