@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import './TodoList.css'
 
 //
 const  Task = ({task, index, onDelete, onComplete}) => {
     return(
-        <div style={{textDecoration: task.completed ? 'line-through' : ''}}>
+        <div className='task' style={{textDecoration: task.completed ? 'line-through' : ''}}>
             {task.title} 
             <button style={{background: 'red'}} onClick={()=>{onDelete(index)}}>X</button>
             <button style={{background: 'yellow'}} onClick={()=>{onComplete(index)}}>Complete</button>
@@ -64,9 +65,9 @@ const TodoList = () => {
     }
   return (
     <div className='todo-container'>
-        <h1>TODO LIST</h1>
-        <div>Tareas Pendientes {taskCount}</div>
-        <div>
+        <h1 className='title'>TODO LIST</h1>
+        <div className='header'>Tareas Pendientes {taskCount}</div>
+        <div className='task'>
             {task.map((task, index ) => (
                     <Task
                     key={task.id}
@@ -78,7 +79,7 @@ const TodoList = () => {
                 )
             )}            
         </div>
-        <div>
+        <div className='create-task'>
             <CreateTask addTask={addTask}/>      
         </div>
     </div>
