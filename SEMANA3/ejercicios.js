@@ -154,3 +154,15 @@ let result = Object.entries(contador).map(([palabra,cantidad])=>{
     return {palabra, cantidad}
 })
 console.log(result)
+
+//Ejercico 10
+let listaPersona = [
+    {nombre: 'Juan', edad: 33},
+    {nombre: 'Sofia', edad: 31},
+    {nombre: 'Briana', edad: 29},
+    {nombre: 'Eduardo', edad: 34},
+    {nombre: 'Fiorella', edad: 30},
+]
+
+let mayor = listaPersona.reduce((acumulador, persona) => (acumulador.edad > persona.edad ? acumulador : persona), listaPersona[0])
+console.log(mayor)
