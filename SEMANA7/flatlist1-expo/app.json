@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "flatList-expo",
-    "slug": "flatList-expo",
+    "name": "flatlist1-expo",
+    "slug": "flatlist1-expo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "flatlistexpo",
+    "scheme": "flatlist1expo",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
